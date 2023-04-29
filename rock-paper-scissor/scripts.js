@@ -88,7 +88,7 @@ function scores() {
     }
 }
 
-var userChoice = userSelection();
+var userChoice = userSelection().toUpperCase;
 var computerChoice = computerSelection();
 var winner = declareWinner();
 
