@@ -16,10 +16,48 @@
     //match powerball - 4
 
 
-    function playerNumbers() {
+    var playerNumArray = [];
+    var pbNumArray = []; 
+    var playerPBNum = null;
+    var pbPBNum = null;
 
+
+//function validatePlayerArray(numArray) {
+//    for (var i = 0; i < numArray.length; i++) {
+//        if (numArray[i] < 1 || numArray[i] > 69) {
+//            return false;
+//        }
+//      }
+//        return true;
+//    }
+
+function validatePlayerNums() {
+    if (this < 1 || this > 69 ) {
+        return false;
+    } 
+  return true; 
+}
+   
+
+function playerNumbers() {
+    var numsPlayer1 = prompt("Please enter your FIRST number from 1 and 69 \n\n");
+
+    var numsPlayer2 = prompt("Please enter your SECOND number from 1 and 69 \n\n");
+    var numsPlayer3 = prompt("Please enter your THIRD number from 1 and 69 \n\n");
+    var numsPlayer4 = prompt("Please enter your FOURTH number from 1 and 69 \n\n");
+    var numsPlayer5 = prompt("Please enter your FIFTH number from 1 and 69 \n\n");
+    var numsPlayerPB = prompt("Please enter your POWERBALL number from 1 and 26 \n\n");
+
+    playerNumArray.push(numsPlayer1,numsPlayer2,numsPlayer3,numsPlayer4,numsPlayer5);
+    var isValid = validatePlayerArray(playerNumArray);
+    console.log(numsPlayer,playerNumArray,isValid);    
+    if (!isValid) {
+        playerNumArray = [];
+        return playerNumbers();
     }
-    
+    return playerNumArray;
+}
+
     function playerPowerball() {
 
     } 
@@ -35,9 +73,7 @@
 
     }
 
-    playerNumArray = [];
-    pbNumArray = []; 
-    
+   
     var playerNums = playerNumbers();
     var playerPbNum = playerPowerball();
     var Multiplier = pbMultiplier();
