@@ -14,4 +14,4 @@ Open pages within your browser.
 
  [Rock, Paper, Scissor](https://moebirdie.github.io/javascript-practice/rock-paper-scissor/index.html)   
  [PowerBall Numbers] - in progress   
- [Password Generator](https://moebirdie.github.io/javascript-practice/password-generator/index.html)
+ [Password Generator](https://moebirdie.github.io/javascript-practice/Password-Generator/index.html)
