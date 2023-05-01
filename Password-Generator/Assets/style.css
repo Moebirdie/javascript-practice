@@ -74,7 +74,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: green;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -91,6 +91,12 @@ header {
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
+}
+.btn:hover {
+  background-color: rgb(54, 153, 54);
+}
+.btn:active {
+  background-color: darkblue;
 }
 
 .float-right {
@@ -116,6 +122,7 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  min-height: 250px;
 }
 
 @media (max-width: 690px) {
