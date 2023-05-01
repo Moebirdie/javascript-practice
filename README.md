@@ -12,6 +12,6 @@ Open pages within your browser.
 ## Usage
  Click a link below to play a game to test your luck against the computer! 
 
- [Rock, Paper, Scissor](https://moebirdie.github.io/javascript-practice/rock-paper-scissor/index.html)
- [PowerBall Numbers] - in progress
+ [Rock, Paper, Scissor](https://moebirdie.github.io/javascript-practice/rock-paper-scissor/index.html)   
+ [PowerBall Numbers] - in progress   
  [Password Generator](https://moebirdie.github.io/javascript-practice/password-generator/index.html)
