@@ -36,48 +36,48 @@ function isOneCharacterTypeSelected(array) {
 }
 
 function characterTypesInput() {
-  alert("Please indicate 'yes' or 'no' to the next questions to include or exclude in your password generation. \nYour choices will be:\n 1. Uppercase Letters like ABCD...\n 2. Lowercase Letters like abcd...\n 3. Special Characters like !@#$%...\n 4. Numeric characters like 12345... \n***YOU MUST ANSWER YES TO AT LEAST ONE QUESTION***");
+  alert("Please indicate Y for 'yes' or N for 'no' to the following questions to choose what to include in your password generation. \nYour choices will be:\n 1. Uppercase Letters like ABCD...\n 2. Lowercase Letters like abcd...\n 3. Special Characters like !@#$%...\n 4. Numeric characters like 12345... \n***YOU MUST ANSWER YES TO AT LEAST ONE QUESTION***");
   function upperLetters() {
     var uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var includeUpperLetters = prompt("UPPERCASE\n\nDo you want to include UPPERCASE letters, like A B C? \nPlease type yes or no");
-    if (includeUpperLetters.toLowerCase() === 'yes') {
+    var includeUpperLetters = prompt("UPPERCASE\n\nDo you want to include UPPERCASE letters, like A B C? \nPlease type Y for yes or N for no");
+    if (includeUpperLetters.toLowerCase() === 'y') {
       criteriaArray.push(uppercaseLetters);
       console.log(criteriaArray);
     }
-    if (includeUpperLetters.toLowerCase() !== 'yes' && includeUpperLetters.toLowerCase() !== 'no') {
+    if (includeUpperLetters.toLowerCase() !== 'y' && includeUpperLetters.toLowerCase() !== 'n') {
       upperLetters();
     }
   }
   function lowerLetters() {
     var lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
-    var includeLowerLetters = prompt("LOWERCASE\n\nDo you want to include LOWERCASE letters, like a b c? \nPlease type yes or no");
-    if (includeLowerLetters.toLowerCase() === 'yes') {
+    var includeLowerLetters = prompt("LOWERCASE\n\nDo you want to include LOWERCASE letters, like a b c? \nPlease type Y for yes or N for no");
+    if (includeLowerLetters.toLowerCase() === 'y') {
       criteriaArray.push(lowercaseLetters);
       console.log(criteriaArray);
     }
-    if (includeLowerLetters.toLowerCase() !== 'yes' && includeLowerLetters.toLowerCase() !== 'no') {
+    if (includeLowerLetters.toLowerCase() !== 'y' && includeLowerLetters.toLowerCase() !== 'n') {
       lowerLetters();
     }
   }
   function specialCharacters() {
     var specCharacters = '!@#$%^&*?';
-    var includeSpecialCharacters = prompt("SPECIAL CHARACTERS\n\nDo you want to include SPECIAL CHARACTERS, like ! @ # $ ? \nPlease type yes or no");
-    if (includeSpecialCharacters.toLowerCase() === 'yes') {
+    var includeSpecialCharacters = prompt("SPECIAL CHARACTERS\n\nDo you want to include SPECIAL CHARACTERS, like ! @ # $ ? \nPlease type Y for yes or N for no");
+    if (includeSpecialCharacters.toLowerCase() === 'y') {
       criteriaArray.push(specCharacters);
       console.log(criteriaArray);
     }
-    if (includeSpecialCharacters.toLowerCase() !== 'yes' && includeSpecialCharacters.toLowerCase() !== 'no') {
+    if (includeSpecialCharacters.toLowerCase() !== 'y' && includeSpecialCharacters.toLowerCase() !== 'n') {
       specialCharacters();
     }
   }
   function numerics() {
     var numbers = '1234567890';
-    var includeNumeric = prompt("NUMBERS\n\nDo you want to include NUMBERS, like 1 2 3? \nPlease type yes or no");
-    if (includeNumeric.toLowerCase() === 'yes') {
+    var includeNumeric = prompt("NUMBERS\n\nDo you want to include NUMBERS, like 1 2 3? \nPlease type Y for yes or N for no");
+    if (includeNumeric.toLowerCase() === 'y') {
       criteriaArray.push(numbers);
       console.log(criteriaArray);
     }
-    if (includeNumeric.toLowerCase() !== 'yes' && includeNumeric.toLowerCase() !== 'no') {
+    if (includeNumeric.toLowerCase() !== 'y' && includeNumeric.toLowerCase() !== 'n') {
       numerics();
     }
   }
@@ -98,6 +98,13 @@ function generatePassword(pwLength) {
   return genPassword;
 }
 
+function setEmptyArray() {
+  criteriaArray = [];
+  document.querySelector("#password").innerHTML = "";
+} 
+
+
+
 // Write password to the #password input
 function writePassword() {
   var inputLength = passwordLengthInput(); // validates password length
@@ -110,5 +117,8 @@ function writePassword() {
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
+
+var reset = document.querySelector("#reset");
+reset.addEventListener("click", setEmptyArray);
 
 console.log(generate);
