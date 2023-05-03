@@ -1,12 +1,12 @@
 # Fun with Javascript
 
 ## Description
-This Javascript-Practice repository contains a couple of javascript games including Rock, Paper, Scissor, and this week's challenge, the Password Generator.  A couple of others are in progress. These particular assignments provided experience in the javascript mindset of functions and their power. The use of the alert box to handle input and display messages is a good example of using user input variables within functions.  Recording the answers within an array displays a couple of the different functions of arrays from push to sum.
+This Javascript-Practice repository contains a couple of javascript games including Rock, Paper, Scissor and this week's challenge, the Password Generator.  A couple of others are in progress. These particular assignments provide insight into the javascript mindset experience of functions and their powerful use as a tool in development. The use of the alert box to handle input and display messages is a good example of using user input variables within functions.  Recording the answers within an array displays a couple of the different functions of arrays from push to sum.
 
 
 ## Implementation
 
-Open pages within your browser.  
+Page open within your browser.  
 
 
 ## Usage
@@ -27,7 +27,7 @@ After the winner of that round is determined, a Win/Loss popup is populated and 
 
 
 ***Password Generator - Class Challenge***  
-The user is prompted to answer the following questions as criteria for the creation of a random password:   
+After clicking the generate password button, the user is prompted to answer the following questions as criteria for the creation of a random password:   
     1. Length of the password  
     2. What criteria to include:  
        - Uppercase Letters  
@@ -37,7 +37,7 @@ The user is prompted to answer the following questions as criteria for the creat
        
 If a user enters an invalid choice, they are asked the same question until a valid choice is entered.  The questions are asked through window prompts through the user's browser.
 
-A reset button has been added to clear the array choices for the creation of the password since the array has been set as a global variable.
+A reset button has been added to clear the current choices for password creation after the password has been generated since the array has been set as a global variable.  This also provides a better user experience when running the generate password process a subsequent time.
  
 
 NOTE: A Readme has been kept in place for folders to be enhanced with more details about the games and the rules.  The Password Generator readme has the criteria of the task.
