@@ -28,12 +28,12 @@ After the winner of that round is determined, a Win/Loss popup is populated and 
 
 ***Password Generator - Class Challenge***
 The user is prompted to answer the following questions as criteria for the creation of a random password:
-    1. Length of the password
-    2. What criteria to include:
-       - Uppercase Letters
-       - Lowercase Letters
-       - Special Characters
-       - Numbers
+    1. Length of the password  
+    2. What criteria to include:  
+       - Uppercase Letters  
+       - Lowercase Letters  
+       - Special Characters  
+       - Numbers  
        
 If a user enters an invalid choice, they are asked the same question until a valid choice.  The questions are asked through window prompts through the user's browser.
 
