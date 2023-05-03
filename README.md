@@ -39,7 +39,10 @@ If a user enters an invalid choice, they are asked the same question until a val
 
 A reset button was added so that the array choices for the creation of the password could be cleared since the array has been set as a global variable.
  
- 
+
+NOTE: A Readme has been kept in place for folders to be enhanced with more details about the games and the rules.  The Password Generator readme has the criteria of the task.
+
+
 ## Implementation
 N/A at this time
 
