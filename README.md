@@ -35,9 +35,9 @@ The user is prompted to answer the following questions as criteria for the creat
        - Special Characters  
        - Numbers  
        
-If a user enters an invalid choice, they are asked the same question until a valid choice.  The questions are asked through window prompts through the user's browser.
+If a user enters an invalid choice, they are asked the same question until a valid choice is entered.  The questions are asked through window prompts through the user's browser.
 
-A reset button was added so that the array choices for the creation of the password could be cleared since the array has been set as a global variable.
+A reset button has been added to clear the array choices for the creation of the password since the array has been set as a global variable.
  
 
 NOTE: A Readme has been kept in place for folders to be enhanced with more details about the games and the rules.  The Password Generator readme has the criteria of the task.
