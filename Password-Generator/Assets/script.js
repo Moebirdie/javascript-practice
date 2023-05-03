@@ -1,48 +1,25 @@
-// click button, generate password
-//Series of prompts for the password criteria
-//Criteria choice inputs for what data types to include in generating password
-    //Length of password - must be at least 8 no more than 128 (not less than 8 and not more than 128) --- passwordLengthInput
-    //Do you want to include uppercase, lowercase, numeric and/or special characters --- 
-    //Validate inputs
-    //One must be required
-//Once all questions answered, generate password with only selected types
-//pass password to page or to alert box
-//|| (typeof lengthInput !== 'number'))
+// Title: Generate Password - javascript-practice repository
 
 var criteriaArray = []; //global variable
 
-//function isLengthInputValid(lengthInput) {
-////  if (isNaN(lengthInput)) {
-////    return false;
-////  } else
-//    if (lengthInput < 8 || lengthInput > 128) {
-//      return false;
-//    } else
-//      return true;
-//}
+//***** Length of password and validation *****
 
-//function passwordLengthInput() {
-//  var pwlength = prompt("How long do you want your password to be? \nIt must be longer than 8, but less than 128 characters. \n** This is a required field and you must enter a value.");
-//  if (isLengthInputValid(pwlength)) {
-//    return pwlength;
-//  }
-//  passwordLengthInput();
-//}
 function passwordLengthInput() {
   //var pwlen = 0;
   var pwlength = prompt("How long do you want your password to be? \nIt must be longer than 8, but less than 128 characters. \n** This is a required field and you must enter a value.");
-  var pwlen = parseInt(pwlength,10);
-  console.log(pwlen); 
-   if (isNaN(pwlen)) {
-    return passwordLengthInput(); 
+  var pwlen = parseInt(pwlength, 10);
+  console.log(pwlen);
+  if (isNaN(pwlen)) {
+    return passwordLengthInput();
   } else
     if (pwlen < 8 || pwlen > 128) {
-    return  passwordLengthInput();
-  } else {
-    return pwlen;
+      return passwordLengthInput();
+    } else {
+      return pwlen;
+    }
+}
 
-}
-}
+//***** Validation at least one character type is selected *****
 
 function isOneCharacterTypeSelected(array) {
   if (array.length > 0) {
@@ -51,6 +28,8 @@ function isOneCharacterTypeSelected(array) {
     characterTypesInput();
   }
 }
+
+//****** User Prompts for character types *****
 
 function characterTypesInput() {
   alert("Please indicate Y for 'yes' or N for 'no' to the following questions to choose what to include in your password generation. \nYour choices will be:\n 1. Uppercase Letters like ABCD...\n 2. Lowercase Letters like abcd...\n 3. Special Characters like !@#$%...\n 4. Numeric characters like 12345... \n***YOU MUST ANSWER YES TO AT LEAST ONE QUESTION***");
@@ -104,9 +83,11 @@ function characterTypesInput() {
   numerics();
 }
 
+// ***** Generate Password *****
+
 function generatePassword(pwLength) {
   var pwInputs = criteriaArray.join("");
-  console.log(pwInputs,pwLength);
+  console.log(pwInputs, pwLength);
   var pwInputsLen = pwInputs.length;
   var genPassword = ' ';
   for (i = 0; i < pwLength; i++) {
@@ -116,26 +97,27 @@ function generatePassword(pwLength) {
   return genPassword;
 }
 
+// ***** Reset button - resets array to begin again *****
+
 function setEmptyArray() {
-  criteriaArray = [];                 
+  criteriaArray = [];
   document.querySelector("#password").innerHTML = "";
-} 
+}
 
-
-
-// Write password to the #password input
+// ***** Write password to the #password input *****
 function writePassword() {
   var inputLength = passwordLengthInput(); // 
   console.log(inputLength);
   var setCharacterChoices = characterTypesInput(); // displays prompts and pushes the choices to the criteriaArray
   var isOneCharTypeSelected = isOneCharacterTypeSelected(criteriaArray); //validates that at least one character type was selected
   var password = generatePassword(inputLength); //generates the random characters for the password
-  document.querySelector("#password").innerHTML = "And the password is...\n\n" + password + "\n\nPlease store this in a safe place!";
+  document.querySelector("#password").innerHTML = "And the password is...\n\n" + password + "\n\nPlease store this in a safe place!";  //updates UI
 }
 
-// Add event listener to generate button
+// ***** Add event listener to generate button *****
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
+// ***** Add event listener for reset button *****
 var reset = document.querySelector("#reset");
 reset.addEventListener("click", setEmptyArray);
