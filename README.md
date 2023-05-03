@@ -17,7 +17,7 @@ Click a link below to play a game to test your luck against the computer!
  [Class Assignment - Password Generator](https://moebirdie.github.io/javascript-practice/Password-Generator/index.html)
  
 
-***Rock, Paper, Scissor***
+***Rock, Paper, Scissor***  
 Rock, Paper, Scissor is a game of chance involving 2 players and 3 variables.  When the game starts, the player is prompted for their choice, followed by the display of the computer's choice.  The two choices are compared to determine the winner.  The winning choices are:
 1. R (rock) over Scissor
 2. S (scissor) over Paper
