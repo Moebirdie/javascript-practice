@@ -11,20 +11,37 @@
 
 var criteriaArray = []; //global variable
 
-function isLengthInputValid(lengthInput) {
-  if (lengthInput < 8 || lengthInput > 128)  {
-    console.log(lengthInput);
-    return false;
-  }
-  return true;
-}
+//function isLengthInputValid(lengthInput) {
+////  if (isNaN(lengthInput)) {
+////    return false;
+////  } else
+//    if (lengthInput < 8 || lengthInput > 128) {
+//      return false;
+//    } else
+//      return true;
+//}
 
+//function passwordLengthInput() {
+//  var pwlength = prompt("How long do you want your password to be? \nIt must be longer than 8, but less than 128 characters. \n** This is a required field and you must enter a value.");
+//  if (isLengthInputValid(pwlength)) {
+//    return pwlength;
+//  }
+//  passwordLengthInput();
+//}
 function passwordLengthInput() {
+  //var pwlen = 0;
   var pwlength = prompt("How long do you want your password to be? \nIt must be longer than 8, but less than 128 characters. \n** This is a required field and you must enter a value.");
-  if (isLengthInputValid(pwlength)) {
-    return pwlength;
-  }
-  passwordLengthInput();
+  var pwlen = parseInt(pwlength,10);
+  console.log(pwlen); 
+   if (isNaN(pwlen)) {
+    return passwordLengthInput(); 
+  } else
+    if (pwlen < 8 || pwlen > 128) {
+    return  passwordLengthInput();
+  } else {
+    return pwlen;
+
+}
 }
 
 function isOneCharacterTypeSelected(array) {
@@ -88,18 +105,19 @@ function characterTypesInput() {
 }
 
 function generatePassword(pwLength) {
-  var inputs = criteriaArray.join("");
-  var inputsLen = inputs.length;
+  var pwInputs = criteriaArray.join("");
+  console.log(pwInputs,pwLength);
+  var pwInputsLen = pwInputs.length;
   var genPassword = ' ';
   for (i = 0; i < pwLength; i++) {
-    genPassword += inputs.charAt(Math.floor(Math.random() * inputsLen));
+    genPassword += pwInputs.charAt(Math.floor(Math.random() * pwInputsLen));
     console.log(genPassword);
   }
   return genPassword;
 }
 
 function setEmptyArray() {
-  criteriaArray = [];
+  criteriaArray = [];                 
   document.querySelector("#password").innerHTML = "";
 } 
 
@@ -107,7 +125,8 @@ function setEmptyArray() {
 
 // Write password to the #password input
 function writePassword() {
-  var inputLength = passwordLengthInput(); // validates password length
+  var inputLength = passwordLengthInput(); // 
+  console.log(inputLength);
   var setCharacterChoices = characterTypesInput(); // displays prompts and pushes the choices to the criteriaArray
   var isOneCharTypeSelected = isOneCharacterTypeSelected(criteriaArray); //validates that at least one character type was selected
   var password = generatePassword(inputLength); //generates the random characters for the password
@@ -120,5 +139,3 @@ generateBtn.addEventListener("click", writePassword);
 
 var reset = document.querySelector("#reset");
 reset.addEventListener("click", setEmptyArray);
-
-console.log(generate);
