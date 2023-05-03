@@ -46,3 +46,23 @@ NOTE: A Readme has been kept in place for folders to be enhanced with more detai
 ## Implementation
 N/A at this time
 
+## Visual Description
+
+After clicking the Generate Password Button:
+
+![image](https://user-images.githubusercontent.com/93432701/235836518-c856a40e-a89f-419e-8f9b-231d6786c245.png)
+
+
+After password generation:
+
+![image](https://user-images.githubusercontent.com/93432701/235836587-2eb02451-ae01-43b2-8f80-cb4e6abac7eb.png)
+
+
+Mobile Display:
+
+![image](https://user-images.githubusercontent.com/93432701/235836640-df659b54-d291-4679-b7cf-6eb13bfb2387.png)
+
+
+
+
+
