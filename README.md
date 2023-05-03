@@ -23,7 +23,7 @@ Rock, Paper, Scissor is a game of chance involving 2 players and 3 variables.  W
 2. S (scissor) over Paper
 3. P (paper) over Rock.
 
-After the winner of that round is determined, a Win/Loss popup is populated and the player is asked if they want to continue.
+After the winner of that round is determined, a Win/Loss popup is populated and the player is asked if they want to continue. When the player chooses not to continue, they will be presented with a thank you message on the landing page.
 
 
 ***Password Generator - Class Challenge***
