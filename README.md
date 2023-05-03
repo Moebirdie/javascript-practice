@@ -63,6 +63,7 @@ Mobile Display:
 ![image](https://user-images.githubusercontent.com/93432701/235836640-df659b54-d291-4679-b7cf-6eb13bfb2387.png)
 
 
-
+## License
+[MIT](https://) - sample link
 
 
