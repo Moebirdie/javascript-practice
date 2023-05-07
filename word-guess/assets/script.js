@@ -13,11 +13,13 @@ function displayMessage() {
     }
 }  
 
-function countwinslosses() {
+function countwinslosses() { //use local storage
     if win {
         wincount++
-    }else {
+        add to local storage and disply in box
+    } else {
         losscount++
+        add to local storage and disply in box
     }
 }
 
@@ -31,7 +33,7 @@ function countdown() {
           // Stops execution of action at set interval
           clearInterval(timerInterval);
           // Calls function to create and append image
- //         displayMessage();
+          displayYouLoseMessage();
         }
       }, 1000);
 }
@@ -40,21 +42,16 @@ function activeWord() {
     var wordIndex = Math.floor(Math.random()*words.length);
     return words[wordIndex]; // or just start with word[0] and have a word counter
     for each letter in the word; 
-    create a box line
-
-    var boxDiv = document.createElement("div");
-    displayBox.appendChild(boxDiv);
-    boxDiv.setAttribute("style", "border-bottom: 2px solid #000");
-    boxDiv.setAttribute(data-letter,i)
-
-
     
-
-
-
+        var boxDiv = document.createElement("div");
+        displayBox.appendChild(boxDiv);
+        boxDiv.setAttribute("style", "border-bottom: 2px solid #000");
+        boxDiv.setAttribute(data-letter,i)
+        boxDiv.setAttribute(data-state,"hidden"); ??
 } 
 
-<div class="box" data-number="1" data-state="hidden"></div>
+
+    <div class="box" data-letter="1" data-state="hidden"></div>
       <div class="box" data-number="2" data-state="hidden"></div>
       <div class="box" data-number="3" data-state="hidden"></div>
       <div class="box" data-number="4" data-state="hidden"></div>
@@ -63,22 +60,39 @@ function activeWord() {
 
 function keyup() {
     var key = key.event;
-
+    on keyup find all letters where the data-letter matches the keyup value 
+    write letter to textContent
+    remove border of box
+    if all letters are revealed, you win 
+    push word from active array to used array
+     if not keep playing 
 }
 
-
-
-
-function constructWord() {
-    for (let index = 0; index < word.length; index++) {
-        var spanEl = document.createElement ('span')
-        spanEl.textContent = word [index]
-       textAreaEl.appendChild(spanEl)
-    }
+function wingame() {
+    maybe bubble up to this if last word is completed and total wins > total losses
+    if no more words in active array, you win the game
 }
-constructWord ()
+
+funciton initwords() {
+   push words from used array to active array
+   active array should contain all words, used array should be empty
+}
+
+//function constructWord() {
+//    for (let index = 0; index < word.length; index++) {
+//        var spanEl = document.createElement ('span')
+//        spanEl.textContent = word [index]
+//       textAreaEl.appendChild(spanEl)
+//    }
+//}
+gameStart ()
 startButton.addEventListener("click", countdown)
-  document.addEventListener('keydown', function (event) {
+
+
+
+
+
+document.addEventListener('keydown', function (event) {
     // var alphabetCharacters = 'abcdefghijklmnopqrstuvwxyz '.split(
     //     ''
     //   );
